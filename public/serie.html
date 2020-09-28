@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="https://i.pinimg.com/originals/e1/3d/fe/e13dfe81b4ef778d441487beb4e46ee4.png">
+    <link rel="stylesheet" href="./Css/serie.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sword art online</title>
+</head>
+<script>
+    //Script menu desplegable
+    pad = 0;
+    opa = 0;
+    hei = 0;
+    var s = false;
+    var pro = false;
+    var z = 0,
+        j = 0;
+    var zn = 100,
+        jn = 160;
+    var myVar, myvar2, myvar3, myvar4;
+
+    function mostrarm() {
+        if (s == false) {
+            document.getElementById("menu").style.display = "block";
+            myVar = setInterval(interval, 20);
+            s = true;
+        } else {
+            myvar2 = setInterval(inter, 20);
+            s = false;
+        }
+    }
+
+    function inter() {
+        if (zn > 0) {
+            zn = zn - 3;
+            jn = jn - 5;
+            document.getElementById("menu").style.opacity = zn + "%";
+            document.getElementById("menu").style.height = jn + "px";
+        }
+        if (zn <= 0) {
+            clearInterval(myvar2);
+            zn = 100;
+            jn = 160;
+            z = 0;
+            j = 0;
+            document.getElementById("menu").style.display = "none";
+        }
+    }
+
+
+    function interval() {
+
+        if (z < 110) {
+            z = z + 2;
+            j = j + 6;
+            document.getElementById("menu").style.opacity = z + "%";
+            if (j < 160) {
+                document.getElementById("menu").style.height = j + "px";
+            } else {
+                document.getElementById("menu").style.height = "max-content";
+            }
+        }
+        if (z >= 110) {
+            clearInterval(myVar);
+        }
+    }
+
+    function expand() {
+        if (window.innerWidth > 720) {
+            if (pro == false) {
+                document.getElementById("pepito").style.display = "block";
+                myVar3 = setInterval(pado, 20);
+                pro = true;
+            } else {
+                myVar4 = setInterval(padi, 20);
+                pro = false;
+            }
+        }
+    }
+
+    function pado() {
+        pad = pad + 0.5;
+        opa = opa + 5;
+        hei = hei + 5;
+        document.getElementById("menu").style.paddingBottom = pad + "px";
+        document.getElementById("pepito").style.opacity = opa + "%";
+        if (opa == 100 && pad == 10) {
+            clearInterval(myVar3);
+        }
+    }
+
+    function padi() {
+        pad = pad - 0.5;
+        opa = opa - 5;
+        hei = hei - 0.5;
+
+        document.getElementById("menu").style.paddingBottom = pad + "px";
+        document.getElementById("pepito").style.opacity = opa + "%";
+        if (opa == 0 && pad == 0) {
+            clearInterval(myVar4);
+            document.getElementById("pepito").style.display = "none";
+        }
+    }
+</script>
+<body>
+    <div id="cuerpo">
+        <div id="cabezera">
+            <div class="conte">
+                <div class="fle">
+                    <h1>SWORD ART ONLINE</h1>
+                    <button id="buttonrayas" class="botonrayas" onclick="mostrarm();"><img
+                        src="./Images/Menu.png"></button>
+                </div>
+                <div id="menu" class="menu">
+                    <ul id="mayor">
+                        <li class="hov"><a href="/quienes">Quienes somos</a></li>
+                        <li class="desple hov" type="button" onclick="expand();">Productos
+                            <ul id="pepito">
+                                <li class="hov"><a href="/figuras">Figuras de coleccion</a></li>
+                                <li class="hov"><a href="/mangas">Mangas</a></li>
+                                <li class="hov"><a href="/posters">Posters</a></li>
+                                <li clas="hov"><a href="/principal">Inicio</a></li>
+                            </ul>
+                        </li>
+                        <li class="hov"><a href="/contacto">Contactenos</a></li>
+                    </ul>
+                    <form name="buscador" id="buscador" method=GET action="http://www.google.es/search" target="_blank">
+                        <input type=hidden name=ie value=UTF-8 />
+                        <input type=hidden name=oe value=UTF-8 />
+                        <input type="text" placeholder="¿Que buscas?" id="barra" name="q" />
+                        <input id="buscar" type="submit" value="Buscar">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="banner">
+            <script>
+                n1 = 100;
+                n2 = 0;
+                n3 = 0;
+
+                var n_1, n_2, n_3;
+                setInterval(inter1, 8000);
+
+                function inter1() {
+                    if (n1 >= 100) {
+                        n_1 = setInterval(n_1inter, 50);
+                    } else if (n2 >= 100) {
+                        n_2 = setInterval(n_2inter, 50);
+                    } else if (n3 >= 100) {
+                        n_3 = setInterval(n_3inter, 50);
+                    }
+                }
+
+                function n_1inter() {
+                    n1 = n1 - 5;
+                    document.getElementById("img1").style.opacity = n1 + "%";
+                    n2 = n2 + 5;
+                    document.getElementById("img2").style.opacity = n2 + "%";
+                    if (n2 >= 100) {
+                        n1 = 0;
+                        n2 = 100;
+                        n3 = 0;
+                        clearInterval(n_1);
+                    }
+
+
+                }
+
+                function n_2inter() {
+
+                    n2 = n2 - 5;
+                    document.getElementById("img2").style.opacity = n2 + "%";
+                    n3 = n3 + 5;
+                    document.getElementById("img3").style.opacity = n3 + "%";
+                    if (n3 >= 100) {
+                        n2 = 0;
+                        n3 = 100;
+                        n1 = 0;
+                        clearInterval(n_2);
+                    }
+
+
+                }
+
+                function n_3inter() {
+                    n3 = n3 - 5;
+                    document.getElementById("img3").style.opacity = n3 + "%";
+                    n1 = n1 + 5;
+                    document.getElementById("img1").style.opacity = n1 + "%";
+                    if (n1 >= 100) {
+                        n3 = 0;
+                        n1 = 100;
+                        n2 = 0;
+                        clearInterval(n_3);
+                    }
+
+
+                }
+            </script>
+            <div id="padre">
+                <img id="img1" src="./Images/Banner1.png">
+                <img id="img2" src="./Images/Banner2.jpg">
+                <img id="img3" src="./Images//Banner3.jpg">
+            </div>
+        </div>
+        <div id="cards">
+            <div id="articulos">
+
+                <div class="compra1">
+                    <h3>Espada Arte En línea escala ordinal Primera Edición Limitada Blu-ray Aniplex Nuevo Japón</h3>
+                    <img class="imgcompra" id="imgen1" src="https://i.ebayimg.com/images/g/1Q8AAOSwGAhZ5Jm6/s-l500.jpg">
+                    <button class="but"><a target="_blank"
+                            href="https://www.ebay.com/itm/Sword-Art-Online-Ordinal-Scale-First-Limited-Edition-Blu-ray-Aniplex-New-Japan/162714348595?epid=2209279315&_trkparms=ispr%3D1&hash=item25e287ec33:g:1Q8AAOSwGAhZ5Jm6&enc=AQAFAAACcBaobrjLl8XobRIiIML1V4Imu%2Fn%2BzU5L90Z278x5ickkfOCvCjTOBWK8pwriaolq5o9fwUigNVROi53sWf18RyTlysoouepmy%2BapoSynx4iJSGLeLU67F68aAODITnnrKEvNVeNH%2BDM7waOX%2Fvz3KlFnRcqom%2FU4jVGcEewgAnauvRTaDlbVJpe6a0ZjfHV3vlbrn0X27O4R3Qns1QVZaX8OBheXk3ombYNFKqb%2B4s1s3RWMbOEbmkkRy%2FjSDdXgzWvF8kA0lNNDhAs62aeDj%2FJd3ILUn%2BBJBPizxUOkF5LITGSnDfnazFJ%2BiY8Ui1xNjLb%2FYcQZsyh0Gu5xHdUREKUxNEugFckWiDCNEvZvjwk7kv9BZoO0TXPkuvAxJigEDO3p%2Bt98SxNnOew5mId3HwPL9JnW5mM91o%2BEf%2FaY6Zh5o1OA%2FM35UgSBBu%2F8JGZ0gpB%2BiinW8kBqZ3I3eXkycCTrR1nANOfHu1y0aUdYQxXKd7UiWkxgIloTCucrIVEEnsMUQDUONNCOdO1cj3pwuHxplfzp2FQCo5Jz8HNsfPsh%2FU2kFbaZRb%2B15Sbve3MlqXr23oy4UlnmS%2F%2F2oHUDz0qRByilzX5M5%2FujAyYBizIDksyFF2G2E6cLxrzvZpE%2BhFKKXxYRuYNJQMof%2BEl52SANZr7YztPhF%2FoEibCaO7nHrax8978k0UsbNaMNFDYbfCANhalgQwecKvEbROSjaOJR0e%2FwkkxTDxO3LpqAnCxd2W9BN%2FFfuSWXhiiSFZapbCVAz47Bw%2BlmiCfy9m234dkiLGIVA7gETGxm6LRZJMxRrJ1Eitf94w5ulUImBFp61w%3D%3D&checksum=16271434859590e1dfcefbee418ca2d557745511c2f8"
+                            class="aimg">Comprame</a></button>
+                </div>
+                <div class="compra2">
+                    <h3>Espada Arte En línea Vol 4 SF Fantasy Anime japonés (Edición Limitada) [2 Blu-ray]</h3>
+                    <img class="imgcompra" id="imgen2" src="https://i.ebayimg.com/images/g/7mUAAOSwTj9dKyIa/s-l500.jpg">
+                    <button class="but"><a target="_blank"
+                            href="https://www.ebay.com/itm/Sword-Art-Online-Vol-4-SF-Fantasy-Japanese-Anime-Limited-Edition-2-Blu-ray/283548106851?epid=1301468892&_trkparms=ispr%3D1&hash=item4204c8c063:g:7mUAAOSwTj9dKyIa&enc=AQAFAAACcBaobrjLl8XobRIiIML1V4Imu%2Fn%2BzU5L90Z278x5ickk7PdDazAlGltMLJlUhrWsDzLB4vr4Z19hskD9YDSfkGVl1o3AAU%2FFUeRNaFYy%2BURfEViZ3%2Fz948iAP7nC1aDbPENC%2FiMs5a3bOXosy61XXhij5mfLueHhgI3jG6CYwcL3poKntWzWjKRU2uEE%2Bb5sgz02a08Vxa6NY5EdQsVLtVbgGxFgM9aid7IyhyZjBI2f3dY4rKx93DiSic9xf2ydFAPXyVIVOuEulIkpzy13Sa%2B1Jl6iWcCdnYwzX%2BLDkVwysAnovy8fH65%2BqUER7dZkdHbOTavR4lify%2BNWl%2BoMyt%2F0oCGksWGaSB3kSA7B1e8Mcb37qyyJLiMJv7nJcBV812IkVXMFfvDgkwphXUevou1PEH0rHAvUAmC7U4TjmC73tJjlU1DXH1xcj3uwz1tjITEg11zjP%2BuLHqVG3q3w5WfZhU6vx462BPvO%2B8CuVku5Hn4UjUUYPSeDuPJhOzNXcjryufQx5mc7Y3ZA9d6HojGOaWhrpGvmZqqX8j8u%2B6%2Bag4BNPOxQ6eBx%2FBhMnDdvI%2Butdq%2Fnhgh1MKWMTD9OoU8SNYJuI3F6NXmCDCtVT%2FWtXBC%2BEZ6vs4Ep470ku9GFd8Qq68gw2Q3f%2Bq2VqB8KKzXFAyHuZorqaC1XsW09GWQ%2FkXShhSl0yEeQxxJbmQIqFxMcigHDK4v8AWye77jNTskfBP%2FsZxVQAqExc5HceUMq9MaaocN6a6YUJViBBOK%2FKFR6RKLwwTX49ncsUBb0yB4%2BHEL0BE97Qd01EHY1cm%2BeoeR58GkV8y%2Fs3VorHsi3dg%3D%3D&checksum=28354810685190e1dfcefbee418ca2d557745511c2f8"
+                            class="aimg">Comprame</a></button>
+                </div>
+                <div class="compra3">
+                    <h3>Nuevo Sword Art Online Sao Blu-Ray Caja Primera Edición Limitada Japón anzx - 12241</h3>
+                    <img class="imgcompra" id="imgen3" src="https://i.ebayimg.com/images/g/bmAAAOSwImRYX3yU/s-l500.jpg">
+                    <button class="but"><a target="_blank"
+                            href="https://www.ebay.com/itm/New-Sword-Art-Online-SAO-Blu-ray-Box-First-Limited-Edition-Japan-ANZX-12241/173875877582?hash=item287bcf56ce:g:bmAAAOSwImRYX3yU"
+                            class="aimg">Comprame</a></button>
+                </div>
+                <div class="compra4">
+                    <h3>Edición Limitada De Sword Art Online Temporada 1 Blu-Ray Caja Set 2B</h3>
+                    <img class="imgcompra" id="imgen4" src="https://i.ebayimg.com/images/g/maMAAOSwK4pe26X8/s-l500.jpg">
+                    <button class="but"><a target="_blank"
+                            href="https://www.ebay.com/itm/Sword-Art-Online-Limited-Edition-Season-1-Blu-Ray-Box-Set-2/324190061558?hash=item4b7b3bc3f6:g:maMAAOSwK4pe26X8"
+                            class="aimg">Comprame</a></button>
+                </div>
+                <div class="compra5">
+                    <h3>Nuevo Sword Art Online II Blu-Ray Caja Primera Edición Limitada Japón anzx - 12741</h3>
+                    <img class="imgcompra" id="imgen5" src="https://i.ebayimg.com/images/g/1AIAAOSwr85bb9td/s-l1600.jpg">
+                    <button class="but"><a target="_blank"
+                            href="https://www.ebay.com/itm/New-Sword-Art-Online-II-Blu-ray-Box-First-Limited-Edition-Japan-ANZX-12741/202650213011?hash=item2f2ee4da93:g:1AIAAOSwr85bb9td"
+                            class="aimg">Comprame</a></button>
+                </div>
+                <div class="compra6">
+                    <h3>Sword Art Online Temporada Completa 1 uno Blu-ray Box Set Edición Limitada Sao</h3>
+                    <img class="imgcompra" id="imgen6" src="https://i.ebayimg.com/images/g/fWYAAOSwMuheo7PU/s-l1600.jpg">
+                    <button class="but"><a target="_blank"
+                            href="https://www.ebay.com/itm/Sword-Art-Online-Complete-Season-1-One-Blu-Ray-Box-Set-Limited-Edition-SAO/174261295806?hash=item2892c85abe:g:fWYAAOSwMuheo7PU"
+                            class="aimg">Comprame</a></button>
+                </div>
+
+            </div>
+        </div>
+        <div id="pie">
+            <footer>
+                <h2>Todos los derechos reservados 2020-2021</h2>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

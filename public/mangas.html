@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="https://i.pinimg.com/originals/e1/3d/fe/e13dfe81b4ef778d441487beb4e46ee4.png">
+    <link rel="stylesheet" href="./Css/mangas.css"/> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sword art online</title>
+    <script>
+        //Script menu desplegable
+        pad = 0;
+        opa = 0;
+        hei = 0;
+        var s = false;
+        var pro = false;
+        var z = 0,
+            j = 0;
+        var zn = 100,
+            jn = 160;
+        var myVar, myvar2, myvar3, myvar4;
+
+        function mostrarm() {
+            if (s == false) {
+                document.getElementById("menu").style.display = "block";
+                myVar = setInterval(interval, 20);
+                s = true;
+            } else {
+                myvar2 = setInterval(inter, 20);
+                s = false;
+            }
+        }
+
+        function inter() {
+            if (zn > 0) {
+                zn = zn - 3;
+                jn = jn - 5;
+                document.getElementById("menu").style.opacity = zn + "%";
+                document.getElementById("menu").style.height = jn + "px";
+            }
+            if (zn <= 0) {
+                clearInterval(myvar2);
+                zn = 100;
+                jn = 160;
+                z = 0;
+                j = 0;
+                document.getElementById("menu").style.display = "none";
+            }
+        }
+
+
+        function interval() {
+
+            if (z < 110) {
+                z = z + 2;
+                j = j + 6;
+                document.getElementById("menu").style.opacity = z + "%";
+                if (j < 160) {
+                    document.getElementById("menu").style.height = j + "px";
+                } else {
+                    document.getElementById("menu").style.height = "max-content";
+                }
+            }
+            if (z >= 110) {
+                clearInterval(myVar);
+            }
+        }
+
+        function expand() {
+            if (window.innerWidth > 720) {
+                if (pro == false) {
+                    document.getElementById("pepito").style.display = "block";
+                    myVar3 = setInterval(pado, 20);
+                    pro = true;
+                } else {
+                    myVar4 = setInterval(padi, 20);
+                    pro = false;
+                }
+            }
+        }
+
+        function pado() {
+            pad = pad + 0.5;
+            opa = opa + 5;
+            hei = hei + 5;
+            document.getElementById("menu").style.paddingBottom = pad + "px";
+            document.getElementById("pepito").style.opacity = opa + "%";
+            if (opa == 100 && pad == 10) {
+                clearInterval(myVar3);
+            }
+        }
+
+        function padi() {
+            pad = pad - 0.5;
+            opa = opa - 5;
+            hei = hei - 0.5;
+
+            document.getElementById("menu").style.paddingBottom = pad + "px";
+            document.getElementById("pepito").style.opacity = opa + "%";
+            if (opa == 0 && pad == 0) {
+                clearInterval(myVar4);
+                document.getElementById("pepito").style.display = "none";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="cuerpo">
+        <div id="cabezera">
+            <div class="conte">
+                <div class="fle">
+                    <h1>SWORD ART ONLINE</h1>
+                    <button id="buttonrayas" class="botonrayas" onclick="mostrarm();"><img
+                        src="./Images/Menu.png"></button>
+                </div>
+                <div id="menu" class="menu">
+                    <ul id="mayor">
+                        <li class="hov"><a href="/quienes">Quienes somos</a></li>
+                        <li class="desple hov" type="button" onclick="expand();">Productos
+                            <ul id="pepito">
+                                <li class="hov"><a href="/figuras">Figuras de coleccion</a></li>
+                                <li class="hov"><a href="/principal">Inicio</a></li>
+                                <li class="hov"><a href="/posters">Posters</a></li>
+                                <li clas="hov"><a href="/serie">Serie</a></li>
+                            </ul>
+                        </li>
+                        <li class="hov"><a href="/contacto">Contactenos</a></li>
+                    </ul>
+                    <form name="buscador" id="buscador" method=GET action="http://www.google.es/search" target="_blank">
+                        <input type=hidden name=ie value=UTF-8 />
+                        <input type=hidden name=oe value=UTF-8 />
+                        <input type="text" placeholder="¿Que buscas?" id="barra" name="q" />
+                        <input id="buscar" type="submit" value="Buscar">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="banner">
+            <style>
+                body {
+                    margin: 0;
+                }
+                
+                #padre {
+                    display: grid;
+                    border: #242423 solid 5px;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: 1fr;
+                }
+                
+                img {
+                    grid-column: 1/2;
+                    grid-row: 1/2;
+                }
+                
+                #img1 {
+                    max-height: 70vh;
+                    opacity: 100%;
+                    width: 100%;
+                }
+                
+                #img2 {
+                    max-height: 70vh;
+                    opacity: 0%;
+                    width: 100%;
+                }
+                
+                #img3 {
+                    max-height: 70vh;
+                    opacity: 0%;
+                    width: 100%;
+                }
+            </style>
+            <script>
+                n1 = 100;
+                n2 = 0;
+                n3 = 0;
+
+                var n_1, n_2, n_3;
+                setInterval(inter1, 8000);
+
+                function inter1() {
+                    if (n1 >= 100) {
+                        n_1 = setInterval(n_1inter, 50);
+                    } else if (n2 >= 100) {
+                        n_2 = setInterval(n_2inter, 50);
+                    } else if (n3 >= 100) {
+                        n_3 = setInterval(n_3inter, 50);
+                    }
+                }
+
+                function n_1inter() {
+                    n1 = n1 - 5;
+                    document.getElementById("img1").style.opacity = n1 + "%";
+                    n2 = n2 + 5;
+                    document.getElementById("img2").style.opacity = n2 + "%";
+                    if (n2 >= 100) {
+                        n1 = 0;
+                        n2 = 100;
+                        n3 = 0;
+                        clearInterval(n_1);
+                    }
+
+
+                }
+
+                function n_2inter() {
+
+                    n2 = n2 - 5;
+                    document.getElementById("img2").style.opacity = n2 + "%";
+                    n3 = n3 + 5;
+                    document.getElementById("img3").style.opacity = n3 + "%";
+                    if (n3 >= 100) {
+                        n2 = 0;
+                        n3 = 100;
+                        n1 = 0;
+                        clearInterval(n_2);
+                    }
+
+
+                }
+
+                function n_3inter() {
+                    n3 = n3 - 5;
+                    document.getElementById("img3").style.opacity = n3 + "%";
+                    n1 = n1 + 5;
+                    document.getElementById("img1").style.opacity = n1 + "%";
+                    if (n1 >= 100) {
+                        n3 = 0;
+                        n1 = 100;
+                        n2 = 0;
+                        clearInterval(n_3);
+                    }
+
+
+                }
+            </script>
+
+            <div id="padre">
+                <img id="img1" src="./Images/Banner1.png">
+                <img id="img2" src="./Images/Banner2.jpg">
+                <img id="img3" src="./Images//Banner3.jpg">
+            </div>
+        </div>
+        <div id="cards">
+            <div id="articulos">
+
+                <div class="compra1">
+                    <h3>Manga Sword Art Online Mother Rosary Tomo 1 Panini Manga Jxr</h3>
+                    <img class="imgcompra" id="imgen1" src="https://http2.mlstatic.com/manga-sword-art-online-mother-rosary-tomo-1-panini-manga-jxr-D_NQ_NP_866147-MCO32228721385_092019-V.webp">
+                    <button class="but"><a target="_blank"
+                            href="https://articulo.mercadolibre.com.co/MCO-534105699-manga-sword-art-online-mother-rosary-tomo-1-panini-manga-jxr-_JM#position=1&type=item&tracking_id=1ed08327-bc4c-4ef4-a2ec-79b3dc47dc01"
+                            class="aimg">Comprame</a></button>
+                </div>
+                <div class="compra2">
+                    <h3>Manga Sword Art Online Calibur Nuevo - Jxr</h3>
+                    <img class="imgcompra" id="imgen2" src="https://http2.mlstatic.com/manga-sword-art-online-calibur-nuevo-jxr-D_NQ_NP_946323-MCO40505525419_012020-V.webp">
+                    <button class="but"><a target="_blank"
+                            href="https://articulo.mercadolibre.com.co/MCO-549666637-manga-sword-art-online-calibur-nuevo-jxr-_JM#position=2&type=item&tracking_id=b4a0cf68-da13-4c7b-8594-bef7487a5813"
+                            class="aimg">Comprame</a></button>
+                </div>
+                <div class="compra3">
+                    <h3>Sword Art Online Manga Tomos Originales Panini Manga</h3>
+                    <img class="imgcompra" id="imgen3" src="https://http2.mlstatic.com/sword-art-online-manga-tomos-originales-panini-manga-D_NQ_NP_914122-MCO31354517296_072019-O.webp">
+                    <button class="but"><a target="_blank"
+                            href="https://articulo.mercadolibre.com.co/MCO-516072835-sword-art-online-manga-tomos-originales-panini-manga-_JM?quantity=1&variation=38322279163&onAttributesExp=true#position=1&type=item&tracking_id=72357bec-6fc3-422e-800c-6a4be85fe040"
+                            class="aimg">Comprame</a></button>
+                </div>
+                <div class="compra4">
+                    <h3>Sao Sword Art Online Tomo 2 Manga Panini Original En Español</h3>
+                    <img class="imgcompra" id="imgen4" src="https://http2.mlstatic.com/sao-sword-art-online-tomo-2-manga-panini-original-en-espanol-D_NQ_NP_788401-MCO40564412808_012020-O.webp">
+                    <button class="but"><a target="_blank"
+                            href="https://articulo.mercadolibre.com.co/MCO-550616248-sao-sword-art-online-tomo-2-manga-panini-original-en-espanol-_JM#position=2&type=item&tracking_id=72357bec-6fc3-422e-800c-6a4be85fe040"
+                            class="aimg">Comprame</a></button>
+                </div>
+                <div class="compra5">
+                    <h3>Manga Sword Art Online Fairy Tomo 1 Panini Manga - Jxr</h3>
+                    <img class="imgcompra" id="imgen5" src="https://http2.mlstatic.com/manga-sword-art-online-fairy-tomo-1-panini-manga-jxr-D_NQ_NP_858967-MCO32232148788_092019-F.webp">
+                    <button class="but"><a target="_blank"
+                            href="https://articulo.mercadolibre.com.co/MCO-534148719-manga-sword-art-online-fairy-tomo-1-panini-manga-jxr-_JM#position=7&type=item&tracking_id=0280976e-e694-4960-a34f-3dc3b9e2a8ed"
+                            class="aimg">Comprame</a></button>
+                </div>
+                <div class="compra6">
+                    <h3>Sword Art Online Progressive, Vol. 1 - Manga- Envío Gratis</h3>
+                    <img class="imgcompra" id="imgen6" src="https://http2.mlstatic.com/sword-art-online-progressive-vol-1-manga-envio-gratis-D_NQ_NP_660103-MCO42287353114_062020-O.webp">
+                    <button class="but"><a target="_blank"
+                            href="https://articulo.mercadolibre.com.co/MCO-567428005-sword-art-online-progressive-vol-1-manga-envio-gratis-_JM?quantity=1#position=16&type=item&tracking_id=0280976e-e694-4960-a34f-3dc3b9e2a8ed"
+                            class="aimg">Comprame</a></button>
+                </div>
+
+            </div>
+        </div>
+        <div id="pie">
+            <footer>
+                <h2>Todos los derechos reservados 2020-2021</h2>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+body{
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#indexContainer{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+flex-flow: column;
+align-items: center;
+justify-content: flex-start;
+background-color:  #242423;
+color: white;
+}
+#FormContainer{
+    width: 100%;
+    height: 90vh;
+    background-color:  #F5CB5C;
+    color: black;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+.Group{
+    margin: 0;
+    width: 40%;
+    height: 35px;
+}
+.cien{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.button{
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 20%;
+    height: 35px;
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+    transition: all 1000ms;
+    cursor: pointer;
+}
+.button:hover{
+    color: white;
+    background-color:black;
+    transition: all 1000ms;
+}
+.button:focus{
+    outline: none;
+}

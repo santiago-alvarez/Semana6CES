@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="https://i.pinimg.com/originals/e1/3d/fe/e13dfe81b4ef778d441487beb4e46ee4.png">
+   <link rel="stylesheet" href="./Css/posters.css" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sword art online</title>
+    <script>
+        //Script menu desplegable
+        pad = 0;
+        opa = 0;
+        hei = 0;
+        var s = false;
+        var pro = false;
+        var z = 0,
+            j = 0;
+        var zn = 100,
+            jn = 160;
+        var myVar, myvar2, myvar3, myvar4;
+
+        function mostrarm() {
+            if (s == false) {
+                document.getElementById("menu").style.display = "block";
+                myVar = setInterval(interval, 20);
+                s = true;
+            } else {
+                myvar2 = setInterval(inter, 20);
+                s = false;
+            }
+        }
+
+        function inter() {
+            if (zn > 0) {
+                zn = zn - 3;
+                jn = jn - 5;
+                document.getElementById("menu").style.opacity = zn + "%";
+                document.getElementById("menu").style.height = jn + "px";
+            }
+            if (zn <= 0) {
+                clearInterval(myvar2);
+                zn = 100;
+                jn = 160;
+                z = 0;
+                j = 0;
+                document.getElementById("menu").style.display = "none";
+            }
+        }
+
+
+        function interval() {
+
+            if (z < 110) {
+                z = z + 2;
+                j = j + 6;
+                document.getElementById("menu").style.opacity = z + "%";
+                if (j < 160) {
+                    document.getElementById("menu").style.height = j + "px";
+                } else {
+                    document.getElementById("menu").style.height = "max-content";
+                }
+            }
+            if (z >= 110) {
+                clearInterval(myVar);
+            }
+        }
+
+        function expand() {
+            if (window.innerWidth > 720) {
+                if (pro == false) {
+                    document.getElementById("pepito").style.display = "block";
+                    myVar3 = setInterval(pado, 20);
+                    pro = true;
+                } else {
+                    myVar4 = setInterval(padi, 20);
+                    pro = false;
+                }
+            }
+        }
+
+        function pado() {
+            pad = pad + 0.5;
+            opa = opa + 5;
+            hei = hei + 5;
+            document.getElementById("menu").style.paddingBottom = pad + "px";
+            document.getElementById("pepito").style.opacity = opa + "%";
+            if (opa == 100 && pad == 10) {
+                clearInterval(myVar3);
+            }
+        }
+
+        function padi() {
+            pad = pad - 0.5;
+            opa = opa - 5;
+            hei = hei - 0.5;
+
+            document.getElementById("menu").style.paddingBottom = pad + "px";
+            document.getElementById("pepito").style.opacity = opa + "%";
+            if (opa == 0 && pad == 0) {
+                clearInterval(myVar4);
+                document.getElementById("pepito").style.display = "none";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="cuerpo">
+        <div id="cabezera">
+            <div class="conte">
+                <div class="fle">
+                    <h1>SWORD ART ONLINE</h1>
+                    <button id="buttonrayas" class="botonrayas" onclick="mostrarm();"><img
+                        src="./Images/Menu.png"></button>
+                </div>
+                <div id="menu" class="menu">
+                    <ul id="mayor">
+                        <li class="hov"><a href="/quienes">Quienes somos</a></li>
+                        <li class="desple hov" type="button" onclick="expand();">Productos
+                            <ul id="pepito">
+                                <li class="hov"><a href="/figuras">Figuras de coleccion</a></li>
+                                <li class="hov"><a href="/mangas">Mangas</a></li>
+                                <li class="hov"><a href="/principal">Inicio</a></li>
+                                <li clas="hov"><a href="/serie">Serie</a></li>
+                            </ul>
+                        </li>
+                        <li class="hov"><a href="/contacto">Contactenos</a></li>
+                    </ul>
+                    <form name="buscador" id="buscador" method=GET action="http://www.google.es/search" target="_blank">
+                        <input type=hidden name=ie value=UTF-8 />
+                        <input type=hidden name=oe value=UTF-8 />
+                        <input type="text" placeholder="¿Que buscas?" id="barra" name="q" />
+                        <input id="buscar" type="submit" value="Buscar">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="banner">
+            <style>
+                body {
+                    margin: 0;
+                }
+                
+                #padre {
+                    display: grid;
+                    border: #242423 solid 5px;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: 1fr;
+                }
+                
+                img {
+                    grid-column: 1/2;
+                    grid-row: 1/2;
+                }
+                
+                #img1 {
+                    max-height: 70vh;
+                    opacity: 100%;
+                    width: 100%;
+                }
+                
+                #img2 {
+                    max-height: 70vh;
+                    opacity: 0%;
+                    width: 100%;
+                }
+                
+                #img3 {
+                    max-height: 70vh;
+                    opacity: 0%;
+                    width: 100%;
+                }
+            </style>
+            <script>
+                n1 = 100;
+                n2 = 0;
+                n3 = 0;
+
+                var n_1, n_2, n_3;
+                setInterval(inter1, 8000);
+
+                function inter1() {
+                    if (n1 >= 100) {
+                        n_1 = setInterval(n_1inter, 50);
+                    } else if (n2 >= 100) {
+                        n_2 = setInterval(n_2inter, 50);
+                    } else if (n3 >= 100) {
+                        n_3 = setInterval(n_3inter, 50);
+                    }
+                }
+
+                function n_1inter() {
+                    n1 = n1 - 5;
+                    document.getElementById("img1").style.opacity = n1 + "%";
+                    n2 = n2 + 5;
+                    document.getElementById("img2").style.opacity = n2 + "%";
+                    if (n2 >= 100) {
+                        n1 = 0;
+                        n2 = 100;
+                        n3 = 0;
+                        clearInterval(n_1);
+                    }
+
+
+                }
+
+                function n_2inter() {
+
+                    n2 = n2 - 5;
+                    document.getElementById("img2").style.opacity = n2 + "%";
+                    n3 = n3 + 5;
+                    document.getElementById("img3").style.opacity = n3 + "%";
+                    if (n3 >= 100) {
+                        n2 = 0;
+                        n3 = 100;
+                        n1 = 0;
+                        clearInterval(n_2);
+                    }
+
+
+                }
+
+                function n_3inter() {
+                    n3 = n3 - 5;
+                    document.getElementById("img3").style.opacity = n3 + "%";
+                    n1 = n1 + 5;
+                    document.getElementById("img1").style.opacity = n1 + "%";
+                    if (n1 >= 100) {
+                        n3 = 0;
+                        n1 = 100;
+                        n2 = 0;
+                        clearInterval(n_3);
+                    }
+
+
+                }
+            </script>
+
+            <div id="padre">
+                <img id="img1" src="./Images/Banner1.png">
+                <img id="img2" src="./Images/Banner2.jpg">
+                <img id="img3" src="./Images//Banner3.jpg">
+            </div>
+        </div>
+        <div id="cards">
+            <div id="articulos">
+
+                <div class="compra1">
+                    <h3>Gryposaurus Sword Art Online Sao Kirito Asuna Anime Poster 1</h3>
+                    <img class="imgcompra" id="imgen1" src="https://http2.mlstatic.com/gryposaurus-sword-art-online-sao-kirito-asuna-anime-poster-1-D_NQ_NP_789935-MCO41804426225_052020-O.webp">
+                    <button class="but"><a target="_blank"
+                            href="https://articulo.mercadolibre.com.co/MCO-562437230-gryposaurus-sword-art-online-sao-kirito-asuna-anime-poster-1-_JM?quantity=1#position=1&type=item&tracking_id=354de7d0-c167-43b2-9451-6f61c8e42691"
+                            class="aimg">Comprame</a></button>
+                </div>
+                <div class="compra2">
+                    <h3>Sword Art Online Lost Song Pc Españo</h3>
+                    <img class="imgcompra" id="imgen2" src="https://http2.mlstatic.com/sword-art-online-lost-song-pc-espanol-D_NQ_NP_627039-MCO28704297888_112018-F.webp">
+                    <button class="but"><a target="_blank"
+                            href="https://articulo.mercadolibre.com.co/MCO-493097467-sword-art-online-lost-song-pc-espanol-_JM?quantity=1#position=4&type=item&tracking_id=354de7d0-c167-43b2-9451-6f61c8e42691"
+                            class="aimg">Comprame</a></button>
+                </div>
+                <div class="compra3">
+                    <h3>Sword art online Anime Alice schuberg Home Wall Mural Scroll Poster Decor 60X90</h3>
+                    <img class="imgcompra" id="imgen3" src="https://i.ebayimg.com/images/g/V6MAAOSw1MhdECUp/s-l500.png">
+                    <button class="but"><a target="_blank"
+                            href="https://www.ebay.com/itm/Sword-art-online-Anime-Alice-schuberg-Home-Wall-Mural-Scroll-Poster-Decor-60X90/283529301692?_trkparms=ispr%3D1&hash=item4203a9cebc:g:V6MAAOSw1MhdECUp&enc=AQAFAAACcBaobrjLl8XobRIiIML1V4Imu%2Fn%2BzU5L90Z278x5ickk7PdDazAlGltMLJlUhrWsD3YFfaJlLFcDVBFwYRedYUEqa4ifPVoa5gocHA6kgJcCpyOV1Jk3NW7Py14LKN%2BmY0%2BGnwO96naqVBzhcQcQTqgNbG0kqi9sR2nvgL3SdcqO%2FUjiiMmQW5WTG4dhenk3IMUId%2BucktSPTUfd3Hx99DF79HreTQW7zTrpzazT%2F20BNE7dJwcsnr9MnqBZNpMYqzrtuLHuX5rd3bRHl2KKWHEKCEC9hK%2FeW5FRKRMz39zqR0VP8ggw1Ywl%2B8qBDgkN4iJ%2FsplTp%2BZfPQnPUSD6MnaE%2BMmQoKoq%2FVbNzhJrb%2BvXagEhglsStzXYHmire3VLPXpMbEHf%2FDZ%2BaQ2tjoNukEOpIz7q6SIDlHaMcXQw37BHRK0Oxchi3Oy%2BZlkys%2BQcPtjk2nQkztNyW%2BGuQWk6%2BWkKAzKzUsLyR9j5jyYS%2FZ8AjkmMtY6QqBCbv85DtbTin1yLWT7Ehsv20Cwujs%2FBPHmCfCbwLM28oMaF85XVzVw5yaTvEK3OemRsXFnVjhk%2BwL5BQCKI8HSnR1x3JTUvdWAvWuWYgtVqcDdTRQ9zI6%2BdwggZ76d6ZnuwcBhE8gFv8g6DfMrFvLPB7dwVKkpQooXUZrXoSApMVE7JJyPnWytqUAtelNoauoFGvKOuDUNRuRRVBBFiG54SVdYSUsvINvbvN4qBDiGYggGPeqL%2B2zatD4dp5TZhPvK4%2FLKIR35nLypuJ4C77FeShDAYzDvHPP17ZoiBeO74RLgQKYIGTT0z6Ob%2FDRdBKIOlxUx%2F0gpl3g%3D%3D&checksum=28352930169293d39a6f2bac48b08bf89ebb6c06200e"
+                            class="aimg">Comprame</a></button>
+                </div>
+                <div class="compra4">
+                    <h3>Espada Arte En línea de la película: cartel promocional de escala ordinal Tipo B</h3>
+                    <img class="imgcompra" id="imgen4" src="https://i.ebayimg.com/images/g/Xr4AAOSwnHZYh4zJ/s-l500.jpg">
+                    <button class="but"><a target="_blank"
+                            href="https://www.ebay.com/itm/Sword-Art-Online-The-Movie-Ordinal-Scale-Promotional-Poster-Type-B/254182250437?_trkparms=ispr%3D1&hash=item3b2e7157c5:g:Xr4AAOSwnHZYh4zJ&enc=AQAFAAACcBaobrjLl8XobRIiIML1V4Imu%2Fn%2BzU5L90Z278x5ickkrDx%2B2NLp21dg6hHbHAkGMfcgfYDnOypBJDrW1s4dLc0TaFkrDbPWuKV0MhQSMpYNEhZpuT7IdzvoATLhIgZJk63BcpuWPhPzinvTTLmANzCpsefYQZ8bG7GaRe8DXR5wgiTlGkOzFJTW6q%2FnIbGoboISfUNHfYhOsOoqpFnYb3FOfIRF4aJ1DzdcO7jD7oLJzlIDT2XHaK6NqHcz09CP2Wk36maTnjLT2woeBZTIP2gO19XimlieeTVGDFdIhhaqASoOErGqP%2BDjHaOfT0nhEU98v77fb8m0Lzf%2BW8qCeuVNUyTRpeQlM89H%2B%2B5Uj9AlP6kTBj5aST%2FeB1aiP%2FkzpXq4aUasJFHai%2FvVpuXURezvBygFGaJj4%2FwxiQT%2F9Huh737t9fv2qi%2BJ5umEktTwyZngUhAvbPNJVenGdS%2Fe2YigwhIsjpVmjIAw5pssa7BJkfOiGa5EFwn6ud3qLaAuXnmeHW2zN1Tk4MKDqFQf9CB%2FG1XUwfDgiV020IQCO6%2BUBKbucW4XgZifoMPIoYfikvWN2RaoLSlAyQx01yr0XXh4bWMhcKsObZoU%2BseJKr9ZqW8kCZKuUms0gwD2DJIlv7LTLli1Bw2Omw7cyJaKjGDmGfdXZJMVfpgp%2BzT9SnMID2r5%2BxPMsvqgUrV7%2BWHhj1Z0BLop4xL%2F3scCQ%2BvdBu2CzmLb33EwrwI6Diy1d2pZSpLeXusXLeZXUtdfLHApkcN%2FghnHi9lPWUobXsE9aiOWW7fBd3sf%2FXMOfH3393F%2F32GMYngOwqUk9jFudiBcRQ%3D%3D&checksum=25418225043793d39a6f2bac48b08bf89ebb6c06200e"
+                            class="aimg">Comprame</a></button>
+                </div>
+                <div class="compra5">
+                    <h3>Espada Arte En línea de la película: cartel promocional de escala ordinal Conjunto de 3 tipos</h3>
+                    <img class="imgcompra" id="imgen5" src="https://i.ebayimg.com/images/g/23sAAOSwel5biWik/s-l1600.jpg">
+                    <button class="but"><a target="_blank"
+                            href="https://www.ebay.com/itm/Sword-Art-Online-The-Movie-Ordinal-Scale-Promotional-Poster-3Types-Set/264269340154?_trkparms=ispr%3D1&hash=item3d87ae1dfa:g:23sAAOSwel5biWik&enc=AQAFAAACcBaobrjLl8XobRIiIML1V4Imu%2Fn%2BzU5L90Z278x5ickkXKoKcbeZcOrOku%2BoOBl%2BS9Bzh7UXEE8xq%2BiYyH09yMmiA6V0CGb%2BjhwAEK5vtLKQjB2l3f2UTifpIrWAqG779kpJB%2Fd3rifHJhemWEL%2B5i1h4SDyZ22NeN2zDsg8CpvKSmxzxlsCcg89oe%2FNQ4c6mXqtvuDQDt9kc%2FM4dQZbdGsR5OBTCt5zMKFBvXt%2Fg4VUAVrMunCtty3wHj0kIS2wy8lGSMJYokO%2B8iN03h1NhZPR8FF9eWM49W5733XEGnng%2BOYZ0JLE0mtoBAthoCmhUbwLVHLHdYEEDIrx%2FFgCaai%2FK%2FfjCUgcvX8ncNJEKxolrShkypiqd%2FtIXUnngspeboHLfJnSRzr24Txu6zPqBSD4ikFdOwUUJ4RlrEhvG8qGPfS60srlzaGHoe7YOwA8uEFFDbrQfrqrC%2FDhEfqvu3%2BHXTi%2FX3CCAS%2B8B98v3A0deh2vZXdhS82UnJDZ2Z%2BuBfN2m5K1dZ5qGCtL94S4zmEkP67n2e9tiWC1pscXv2xqga3wE92snZU2DCmad8xDbeT4J67ByWc7dl9B%2FATZ3V3dMRtKcEtFMp5cogP7IFc4LxGSNp51y9Tp3auaIxuNCmrzUzCt7PTscuNroY9aJtkZA1mcU5gOUrk176yKjQS1devZzsnQmGZiZbROhvLD6V5U1OibRvmegWOd5kHyv0BzP4vNJmxLMcrnUUlybVIBNkIv9JUyu5zq4jWLKldZAf3RvMACjvLp9QuK8VSC6CXE2pUsNahSndTAD7astt87pVeEDJc6%2F%2BOF64XcY6LJcQ%3D%3D&checksum=26426934015493d39a6f2bac48b08bf89ebb6c06200e"
+                            class="aimg">Comprame</a></button>
+                </div>
+                <div class="compra6">
+                    <h3>4459 Anime Sword Art Online desplazamiento De Pared Póster De Decoración Del Hogar</h3>
+                    <img class="imgcompra" id="imgen6" src="https://i.ebayimg.com/images/g/BNsAAOSw5ZtaZVlD/s-l500.png">
+                    <button class="but"><a target="_blank"
+                            href="https://www.ebay.com/itm/4459-Sword-Art-Online-Anime-Home-Decor-Poster-Wall-Scroll/122927020839?hash=item1c9f057b27:g:BNsAAOSw5ZtaZVlD"
+                            class="aimg">Comprame</a></button>
+                </div>
+
+            </div>
+        </div>
+        <div id="pie">
+            <footer>
+                <h2>Todos los derechos reservados 2020-2021</h2>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

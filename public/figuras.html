@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="https://i.pinimg.com/originals/e1/3d/fe/e13dfe81b4ef778d441487beb4e46ee4.png">
+    <link rel="stylesheet" href="./Css/figuras.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sword art online</title>
+    <script>
+        //Script menu desplegable
+        pad = 0;
+        opa = 0;
+        hei = 0;
+        var s = false;
+        var pro = false;
+        var z = 0,
+            j = 0;
+        var zn = 100,
+            jn = 160;
+        var myVar, myvar2, myvar3, myvar4;
+
+        function mostrarm() {
+            if (s == false) {
+                document.getElementById("menu").style.display = "block";
+                myVar = setInterval(interval, 20);
+                s = true;
+            } else {
+                myvar2 = setInterval(inter, 20);
+                s = false;
+            }
+        }
+
+        function inter() {
+            if (zn > 0) {
+                zn = zn - 3;
+                jn = jn - 5;
+                document.getElementById("menu").style.opacity = zn + "%";
+                document.getElementById("menu").style.height = jn + "px";
+            }
+            if (zn <= 0) {
+                clearInterval(myvar2);
+                zn = 100;
+                jn = 160;
+                z = 0;
+                j = 0;
+                document.getElementById("menu").style.display = "none";
+            }
+        }
+
+
+        function interval() {
+
+            if (z < 110) {
+                z = z + 2;
+                j = j + 6;
+                document.getElementById("menu").style.opacity = z + "%";
+                if (j < 160) {
+                    document.getElementById("menu").style.height = j + "px";
+                } else {
+                    document.getElementById("menu").style.height = "max-content";
+                }
+            }
+            if (z >= 110) {
+                clearInterval(myVar);
+            }
+        }
+
+        function expand() {
+            if (window.innerWidth > 720) {
+                if (pro == false) {
+                    document.getElementById("pepito").style.display = "block";
+                    myVar3 = setInterval(pado, 20);
+                    pro = true;
+                } else {
+                    myVar4 = setInterval(padi, 20);
+                    pro = false;
+                }
+            }
+        }
+
+        function pado() {
+            pad = pad + 0.5;
+            opa = opa + 5;
+            hei = hei + 5;
+            document.getElementById("menu").style.paddingBottom = pad + "px";
+            document.getElementById("pepito").style.opacity = opa + "%";
+            if (opa == 100 && pad == 10) {
+                clearInterval(myVar3);
+            }
+        }
+
+        function padi() {
+            pad = pad - 0.5;
+            opa = opa - 5;
+            hei = hei - 0.5;
+
+            document.getElementById("menu").style.paddingBottom = pad + "px";
+            document.getElementById("pepito").style.opacity = opa + "%";
+            if (opa == 0 && pad == 0) {
+                clearInterval(myVar4);
+                document.getElementById("pepito").style.display = "none";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="cuerpo">
+        <div id="cabezera">
+            <div class="conte">
+                <div class="fle">
+                    <h1>SWORD ART ONLINE</h1>
+                    <button id="buttonrayas" class="botonrayas" onclick="mostrarm();"><img
+                        src="./Images/Menu.png"></button>
+                </div>
+                <div id="menu" class="menu">
+                    <ul id="mayor">
+                        <li class="hov"><a href="/quienes">Quienes somos</a></li>
+                        <li class="desple hov" type="button" onclick="expand();">Productos
+                            <ul id="pepito">
+                                <li class="hov"><a href="/principal">Inicio</a></li>
+                                <li class="hov"><a href="/mangas">Mangas</a></li>
+                                <li class="hov"><a href="/posters">Posters</a></li>
+                                <li clas="hov"><a href="/serie">Serie</a></li>
+                            </ul>
+                        </li>
+                        <li class="hov"><a href="/contacto">Contactenos</a></li>
+                    </ul>
+                    <form name="buscador" id="buscador" method=GET action="http://www.google.es/search" target="_blank">
+                        <input type=hidden name=ie value=UTF-8 />
+                        <input type=hidden name=oe value=UTF-8 />
+                        <input type="text" placeholder="¿Que buscas?" id="barra" name="q" />
+                        <input id="buscar" type="submit" value="Buscar">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="banner">
+            <style>
+                body {
+                    margin: 0;
+                }
+                
+                #padre {
+                    display: grid;
+                    border: #242423 solid 5px;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: 1fr;
+                }
+                
+                img {
+                    grid-column: 1/2;
+                    grid-row: 1/2;
+                }
+                
+                #img1 {
+                    max-height: 70vh;
+                    opacity: 100%;
+                    width: 100%;
+                }
+                
+                #img2 {
+                    max-height: 70vh;
+                    opacity: 0%;
+                    width: 100%;
+                }
+                
+                #img3 {
+                    max-height: 70vh;
+                    opacity: 0%;
+                    width: 100%;
+                }
+            </style>
+            <script>
+                n1 = 100;
+                n2 = 0;
+                n3 = 0;
+
+                var n_1, n_2, n_3;
+                setInterval(inter1, 8000);
+
+                function inter1() {
+                    if (n1 >= 100) {
+                        n_1 = setInterval(n_1inter, 50);
+                    } else if (n2 >= 100) {
+                        n_2 = setInterval(n_2inter, 50);
+                    } else if (n3 >= 100) {
+                        n_3 = setInterval(n_3inter, 50);
+                    }
+                }
+
+                function n_1inter() {
+                    n1 = n1 - 5;
+                    document.getElementById("img1").style.opacity = n1 + "%";
+                    n2 = n2 + 5;
+                    document.getElementById("img2").style.opacity = n2 + "%";
+                    if (n2 >= 100) {
+                        n1 = 0;
+                        n2 = 100;
+                        n3 = 0;
+                        clearInterval(n_1);
+                    }
+
+
+                }
+
+                function n_2inter() {
+
+                    n2 = n2 - 5;
+                    document.getElementById("img2").style.opacity = n2 + "%";
+                    n3 = n3 + 5;
+                    document.getElementById("img3").style.opacity = n3 + "%";
+                    if (n3 >= 100) {
+                        n2 = 0;
+                        n3 = 100;
+                        n1 = 0;
+                        clearInterval(n_2);
+                    }
+
+
+                }
+
+                function n_3inter() {
+                    n3 = n3 - 5;
+                    document.getElementById("img3").style.opacity = n3 + "%";
+                    n1 = n1 + 5;
+                    document.getElementById("img1").style.opacity = n1 + "%";
+                    if (n1 >= 100) {
+                        n3 = 0;
+                        n1 = 100;
+                        n2 = 0;
+                        clearInterval(n_3);
+                    }
+
+
+                }
+            </script>
+
+            <div id="padre">
+                <img id="img1" src="./Images/Banner1.png">
+                <img id="img2" src="./Images/Banner2.jpg">
+                <img id="img3" src="./Images//Banner3.jpg">
+            </div>
+        </div>
+        <div id="cards">
+            <div id="articulos">
+                <div class="compra6">
+                    <h3>Sword Art Online Kirito Figura En Bolsa Precio Unidad</h3>
+                    <img class="imgcompra" id="imgen1" src="https://http2.mlstatic.com/sword-art-online-kirito-figura-en-bolsa-precio-unidad-D_NP_922760-MCO31118441366_062019-X.webp">
+                    <button class="but"><a target="_blank"
+                            href="https://articulo.mercadolibre.com.co/MCO-481043232-sword-art-online-kirito-figura-en-bolsa-precio-unidad-_JM?quantity=1#position=4&type=item&tracking_id=d0841f42-1206-42c1-8f68-e7e95ed209bb"
+                            class="aimg">Comprame</a></button>
+                </div>
+                <div class="compra6">
+                    <h3>Muñecos Anime Sao Sword Art Online Kirito Set X 6 + Envio</h3>
+                    <img class="imgcompra" id="imgen2" src="https://http2.mlstatic.com/munecos-anime-sao-sword-art-online-kirito-set-x-6-envio-D_NQ_NP_966913-MCO42235069312_062020-V.webp">
+                    <button class="but"><a
+                            href="https://articulo.mercadolibre.com.co/MCO-566781462-munecos-anime-sao-sword-art-online-kirito-set-x-6-envio-_JM#position=2&type=item&tracking_id=b1086857-cda3-4693-a221-1d7ddcabc37d"
+                            class="aimg">Comprame</a></button>
+                </div>
+                <div class="compra6">
+                    <h3>Figura Asuna ( Sword Art Online )</h3>
+                    <img class="imgcompra" id="imgen3" src="https://http2.mlstatic.com/figura-asuna-sword-art-online-D_NP_810674-MCO41128442017_032020-X.webp">
+                    <button class="but"><a target="_blank"
+                            href="https://articulo.mercadolibre.com.co/MCO-556478620-figura-asuna-sword-art-online--_JM#position=29&type=item&tracking_id=d0841f42-1206-42c1-8f68-e7e95ed209bb"
+                            class="aimg">Comprame</a></button>
+                </div>
+                <div class="compra6">
+                    <h3>Sword Art Online Sao Kazuto Kirigaya Kirito Figura En Caja</h3>
+                    <img class="imgcompra" id="imgen4" src="https://http2.mlstatic.com/sword-art-online-sao-kazuto-kirigaya-kirito-figura-en-caja-D_NQ_NP_879058-MCO41088874106_032020-V.webp">
+                    <button class="but"><a target="_blank"
+                            href="https://articulo.mercadolibre.com.co/MCO-556021392-sword-art-online-sao-kazuto-kirigaya-kirito-figura-en-caja-_JM?quantity=1#position=1&type=item&tracking_id=b1086857-cda3-4693-a221-1d7ddcabc37d"
+                            class="aimg">Comprame</a></button>
+                </div>
+                <div class="compra6">
+                    <h3>Espada De Taito Art Online Sao Senkou No Asuna Figura ~ 7 As</h3>
+                    <img class="imgcompra" id="imgen5" src="https://http2.mlstatic.com/espada-de-taito-art-online-sao-senkou-no-asuna-figura-7-as-D_NQ_NP_812632-MCO31988493858_082019-V.webp">
+                    <button class="but"><a target="_blank"
+                            href="https://articulo.mercadolibre.com.co/MCO-532263289-espada-de-taito-art-online-sao-senkou-no-asuna-figura-7-as-_JM#position=18&type=item&tracking_id=b1086857-cda3-4693-a221-1d7ddcabc37d"
+                            class="aimg">Comprame</a></button>
+                </div>
+                <div class="compra6">
+                    <h3>Taito 6 Sword Art Online Ii Figura Yuuki</h3>
+                    <img class="imgcompra" id="imgen6" src="https://http2.mlstatic.com/taito-6-sword-art-online-ii-figura-yuuki-D_NP_707804-MCO41568980576_042020-X.webp">
+                    <button class="but"><a target="_blank"
+                            href="https://articulo.mercadolibre.com.co/MCO-560389597-taito-6-sword-art-online-ii-figura-yuuki-_JM#position=13&type=item&tracking_id=ee185622-a4dc-4223-9eb8-246807c9f4ca"
+                            class="aimg">Comprame</a></button>
+                </div>
+
+            </div>
+        </div>
+        <div id="pie">
+            <footer>
+                <h2>Todos los derechos reservados 2020-2021</h2>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

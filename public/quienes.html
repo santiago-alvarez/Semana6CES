@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="https://i.pinimg.com/originals/e1/3d/fe/e13dfe81b4ef778d441487beb4e46ee4.png">
+    <link rel="stylesheet" href="./Css/quienes.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sword art online</title>
+    <script>
+        //Script menu desplegable
+        pad = 0;
+        opa = 0;
+        hei = 0;
+        var s = false;
+        var pro = false;
+        var z = 0,
+            j = 0;
+        var zn = 100,
+            jn = 160;
+        var myVar, myvar2, myvar3, myvar4;
+    
+        function mostrarm() {
+            if (s == false) {
+                document.getElementById("menu").style.display = "block";
+                myVar = setInterval(interval, 20);
+                s = true;
+            } else {
+                myvar2 = setInterval(inter, 20);
+                s = false;
+            }
+        }
+    
+        function inter() {
+            if (zn > 0) {
+                zn = zn - 3;
+                jn = jn - 5;
+                document.getElementById("menu").style.opacity = zn + "%";
+                document.getElementById("menu").style.height = jn + "px";
+            }
+            if (zn <= 0) {
+                clearInterval(myvar2);
+                zn = 100;
+                jn = 160;
+                z = 0;
+                j = 0;
+                document.getElementById("menu").style.display = "none";
+            }
+        }
+    
+    
+        function interval() {
+    
+            if (z < 110) {
+                z = z + 2;
+                j = j + 6;
+                document.getElementById("menu").style.opacity = z + "%";
+                if (j < 160) {
+                    document.getElementById("menu").style.height = j + "px";
+                } else {
+                    document.getElementById("menu").style.height = "max-content";
+                }
+            }
+            if (z >= 110) {
+                clearInterval(myVar);
+            }
+        }
+    
+        function expand() {
+            if (window.innerWidth > 720) {
+                if (pro == false) {
+                    document.getElementById("pepito").style.display = "block";
+                    myVar3 = setInterval(pado, 20);
+                    pro = true;
+                } else {
+                    myVar4 = setInterval(padi, 20);
+                    pro = false;
+                }
+            }
+        }
+    
+        function pado() {
+            pad = pad + 0.5;
+            opa = opa + 5;
+            hei = hei + 5;
+            document.getElementById("menu").style.paddingBottom = pad + "px";
+            document.getElementById("pepito").style.opacity = opa + "%";
+            if (opa == 100 && pad == 10) {
+                clearInterval(myVar3);
+            }
+        }
+    
+        function padi() {
+            pad = pad - 0.5;
+            opa = opa - 5;
+            hei = hei - 0.5;
+    
+            document.getElementById("menu").style.paddingBottom = pad + "px";
+            document.getElementById("pepito").style.opacity = opa + "%";
+            if (opa == 0 && pad == 0) {
+                clearInterval(myVar4);
+                document.getElementById("pepito").style.display = "none";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="cuerpo">
+        <div id="cabezera">
+            <div class="conte">
+                <div class="fle">
+                    <h1>SWORD ART ONLINE</h1>
+                    <button class="botonrayas" onclick="mostrarm();"><img
+                        src="./Images/Menu.png"></button>
+                </div>
+                <div id="menu" class="menu">
+                    <ul id="mayor">
+                        <li class="hov" type="button"><a href="/principal">Inicio</a></li>
+                        <li class="desple hov" type="button" onclick="expand();">Productos
+                            <ul id="pepito">
+                                <li class="hov"><a href="/figuras">Figuras de coleccion</a></li>
+                                <li class="hov"><a href="/mangas">Mangas</a></li>
+                                <li class="hov"><a href="/posters">Posters</a></li>
+                                <li clas="hov"><a href="/serie">Serie</a></li>
+                            </ul>
+                        </li>
+                        <li class="hov"><a href="/contacto">Contactenos</a></li>
+                    </ul>
+                    <form name="buscador" id="buscador" method=GET action="http://www.google.es/search" target="_blank">
+                        <input type=hidden name=ie value=UTF-8 />
+                        <input type=hidden name=oe value=UTF-8 />
+                        <input type="text" placeholder="¿Que buscas?" id="barra" name="q" />
+                        <input id="buscar" type="submit" value="Buscar">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="banner">
+            <script>
+                n1 = 100;
+                n2 = 0;
+                n3 = 0;
+
+                var n_1, n_2, n_3;
+                setInterval(inter1, 8000);
+
+                function inter1() {
+                    if (n1 >= 100) {
+                        n_1 = setInterval(n_1inter, 50);
+                    } else if (n2 >= 100) {
+                        n_2 = setInterval(n_2inter, 50);
+                    } else if (n3 >= 100) {
+                        n_3 = setInterval(n_3inter, 50);
+                    }
+                }
+
+                function n_1inter() {
+                    n1 = n1 - 5;
+                    document.getElementById("img1").style.opacity = n1 + "%";
+                    n2 = n2 + 5;
+                    document.getElementById("img2").style.opacity = n2 + "%";
+                    if (n2 >= 100) {
+                        n1 = 0;
+                        n2 = 100;
+                        n3 = 0;
+                        clearInterval(n_1);
+                    }
+
+
+                }
+
+                function n_2inter() {
+
+                    n2 = n2 - 5;
+                    document.getElementById("img2").style.opacity = n2 + "%";
+                    n3 = n3 + 5;
+                    document.getElementById("img3").style.opacity = n3 + "%";
+                    if (n3 >= 100) {
+                        n2 = 0;
+                        n3 = 100;
+                        n1 = 0;
+                        clearInterval(n_2);
+                    }
+
+
+                }
+
+                function n_3inter() {
+                    n3 = n3 - 5;
+                    document.getElementById("img3").style.opacity = n3 + "%";
+                    n1 = n1 + 5;
+                    document.getElementById("img1").style.opacity = n1 + "%";
+                    if (n1 >= 100) {
+                        n3 = 0;
+                        n1 = 100;
+                        n2 = 0;
+                        clearInterval(n_3);
+                    }
+
+
+                }
+            </script>
+            <div id="padre">
+                <img id="img1" src="./Images/Banner1.png">
+                <img id="img2" src="./Images/Banner2.jpg">
+                <img id="img3" src="./Images//Banner3.jpg">
+            </div>
+        </div>
+        <div id="contenido">
+            <h1>¿Quienes somos?</h1>
+            <p>Somos la compañía tecnológica de comercio electrónico líder de América Latina y nuestro propósito es democratizar el comercio y el dinero para impactar en el desarrollo de la región. Nacimos en 1999 y actualmente operamos en 18 países de la
+                región. En pocos años, logramos convertirnos en la séptima plataforma de comercio electrónico del mundo. A través de nuestro ecosistema completo compuesto por Mercado Pago, Mercado Shops, Mercado Libre Publicidad y Mercado Envíos, ofrecemos
+                soluciones para que tanto individuos como empresas puedan comprar, vender, anunciar, enviar y pagar por bienes y servicios por Internet. En 2017 lanzamos Mercado Crédito, orientada a democratizar el acceso al crédito y potenciar la inclusión
+                financiera. Y, en 2019, celebramos 20 años de vida con una fuerte apuesta a seguir democratizando el comercio y las finanzas.
+
+            </p>
+        </div>
+        <div id="pie">
+            <footer>
+                <h2>Todos los derechos reservados 2020-2021</h2>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

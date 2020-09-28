@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea</title>
+    <link rel="stylesheet" href="./Css/index.css">
+</head>
+
+<body>
+    <div id="indexContainer">
+        <h1>AnimeFlV</h1>
+        <div id="FormContainer">
+            <h3>Registrarse</h3>
+            <div class="cien">
+                <p class="Group">Nickname</p>
+                <input type="text" class="Group" />
+            </div>
+            <div class="cien">
+                <p  class="Group">Nombres</p>
+                <input type="text"  class="Group"/>
+            </div>
+            <div class="cien">
+                <p  class="Group">Apellidos</p>
+                <input type="text" class="Group" />
+            </div>
+           <button class="button"  onclick="Accion1()">Continuar</button>
+        </div>
+
+    </div>
+    <script>
+        function Accion1 (){
+            console.log("Felipe");
+            setTimeout(function(){
+                location.href="/principal";
+            }, 200)
+        }
+    </script>
+</body>
+
+</html>

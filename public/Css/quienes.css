@@ -1,0 +1,359 @@
+       #cuerpo {
+           display: grid;
+           grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+           grid-template-rows: max-content max-content max-content max-content max-content max-content max-content max-content max-content;
+       }
+
+       #cabezera {
+           margin: 0px;
+           padding: 0px;
+           grid-column: 1/13;
+           grid-row: 1/2;
+       }
+
+       #banner {
+           grid-row: 2/3;
+           grid-column: 1/13;
+           text-align: center;
+       }
+
+       #contenido {
+           grid-row: 3/7;
+           grid-column: 2/12;
+       }
+
+       #pie {
+           color: white;
+           grid-row: 7/8;
+           grid-column: 1/13;
+       }
+
+       body {
+           margin: 0px;
+           background-color: #F5CB5C;
+       }
+
+       .conte {
+           border-radius: 0px;
+           background-color: #242423;
+       }
+
+       /*@Media de teléfonos*/
+
+       @media (max-width:720px) {
+           .fle h1 {
+               color: #CFDBD5;
+               font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+           }
+           .fle {
+               display: flex;
+               width: 100%;
+               justify-content: space-between;
+           }
+           .botonrayas {
+               max-width: 11vh;
+               background: none;
+               border: none;
+               width: 11vw;
+               margin: 5px;
+               padding: 2px;
+           }
+           .botonrayas img {
+               width: 10vw;
+               max-width: 10vh;
+           }
+           .conte h1 {
+               max-height: 11vh;
+               max-width: 80vw;
+               font-size: 5vw;
+               padding: 0px;
+               margin-left: 10px;
+               margin-bottom: auto;
+               margin-top: auto;
+               display: inline-block;
+           }
+           .menu {
+               height: 0;
+               opacity: 0%;
+               background-color: #333533;
+               display: none;
+               margin: 2px;
+               margin-bottom: 0px;
+               padding: 5px;
+           }
+           .menu ul {
+               list-style: none;
+               margin-left: 0px;
+               padding-left: 12px;
+           }
+           .desple {
+               height: 23px;
+               transition: height 1s;
+               list-style-image: url("https://image.flaticon.com/icons/svg/892/892528.svg");
+               opacity: 1;
+           }
+           .desple:hover {
+               height: 50px;
+               list-style-image: url("https://image.flaticon.com/icons/svg/892/892555.svg");
+           }
+           .desple ul {
+               display: none;
+           }
+           .desple:hover ul {
+               display: block;
+               position: relative;
+               transform: translate(50px, 0);
+           }
+           li {
+               border-radius: 2px;
+               background-color: #E8EDDF;
+               padding: 4px;
+               display: flex;
+               align-items: center;
+               margin-top: 3px;
+               margin-bottom: 3px;
+               width: 120px;
+               font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+           }
+           #buscador {
+               height: 30px;
+           }
+           #barra, #buscar {
+               height: 30px;
+               border: none;
+           }
+           footer {
+               padding: 4px;
+               justify-content: center;
+               font-size: 12px;
+               display: flex;
+               background-color: #333533;
+           }
+           #articulos {
+               background-color: #F5CB5C;
+               text-align: center;
+           }
+           .hov a {
+               color: black;
+               text-decoration: none;
+           }
+       }
+
+       /*@Media Computadores*/
+
+       @media(min-width: 721px) {
+           #banner {
+               color: #CFDBD5;
+               grid-column: 3/11;
+           }
+           .desple {
+               cursor: pointer;
+           }
+           #menu, .fle {
+               color: #CFDBD5;
+               font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+           }
+           .botonrayas {
+               display: none;
+           }
+           .conte h1 {
+               max-height: 10vh;
+               max-width: 80vw;
+               font-size: 4vw;
+               padding: 0px;
+               margin-left: 10px;
+               margin-bottom: auto;
+               margin-top: auto;
+               display: inline-block;
+           }
+           .menu {
+               margin-bottom: 0px;
+               display: block !important;
+               font-size: 20px;
+               background-color: #333533;
+               width: 100%;
+               margin-top: 2%;
+               border: 1px;
+               opacity: 1 !important;
+               height: max-content !important;
+           }
+           #buscador {
+               display: inline-block;
+               position: absolute;
+               top: 20px;
+               left: 72vw;
+           }
+           #mayor {
+               color: white;
+               width: 100%;
+               display: flex;
+               justify-content: space-around;
+               align-items: center;
+               height: 50px;
+               background-color: #333533;
+           }
+           .menu ul {
+               list-style: none;
+               padding-left: 0px;
+           }
+           .menu li {
+               font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+               display: inline-block;
+           }
+           .desple ul {
+               display: none;
+           }
+           .desple li {
+               color: white;
+               background-color: #333533;
+               padding: 5px;
+               margin: 1px;
+               display: block;
+               border-radius: 4px;
+           }
+           .menu {
+               margin-left: 0px;
+               margin-right: 0px;
+               padding-left: 0px;
+               padding-right: 0px;
+           }
+           #pepito {
+               background-size: 0px;
+               opacity: 0%;
+               position: absolute;
+               left: 0px;
+               width: 100%;
+               text-align: center;
+               background: #333533;
+               margin-left: 0px;
+               margin-right: 0px;
+               padding-left: 0px;
+               padding-right: 0px;
+           }
+           #pepito li {
+               font-size: 18px;
+               display: inline-block;
+               background: #333533;
+               width: 23vw;
+               margin-left: 0px;
+               margin-right: 0px;
+               padding-left: 0px;
+               padding-right: 0px;
+           }
+           #barra {
+               width: 14vw;
+               height: 30px;
+               margin: 0px;
+               padding: 0px;
+               border: none;
+               border-radius: 1px;
+           }
+           #buscar {
+               font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+               width: 10vw;
+               height: 30px;
+               margin-top: -5px;
+               margin-left: -5px;
+               padding: 0px;
+               border-radius: 0px;
+               border: none;
+               position: relative;
+               top: 1px;
+               background-color: gainsboro;
+           }
+           .conte {
+               width: 100%;
+           }
+           footer {
+               padding: 6px;
+               justify-content: center;
+               font-size: 12px;
+               display: flex;
+               background-color: #333533;
+           }
+           #articulos {
+               background-color: #F5CB5C;
+               text-align: center;
+               margin-left: 10%;
+               margin-right: 10%;
+           }
+           .hov a {
+               text-decoration: none;
+               color: #CFDBD5;
+           }
+       }
+
+       /*Css cards*/
+
+       .compra1, .compra2, .compra3, .compra4, .compra5, .compra6 {
+           background-color: white;
+           display: inline-block;
+           margin: 10px;
+           height: 250px;
+           width: 250px;
+           border: 1px solid white;
+       }
+
+       #imgcompra {
+           width: 249px;
+           height: 200px;
+       }
+
+       .but {
+           background-color: #242423;
+           font-size: 20px;
+           border: none;
+           border-radius: 2px;
+           width: 120px;
+           height: 40px;
+       }
+
+       .aimg {
+           text-decoration: none;
+           color: white;
+       }
+
+       #contenido h1 {
+           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+           text-align: center;
+       }
+
+       #contenido p {
+           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+           font-size: 18px;
+           text-align: justify;
+       }
+
+       body {
+           margin: 0;
+       }
+
+       #padre {
+           display: grid;
+           border: #242423 solid 5px;
+           grid-template-columns: 1fr;
+           grid-template-rows: 1fr;
+       }
+
+       img {
+           grid-column: 1/2;
+           grid-row: 1/2;
+       }
+
+       #img1 {
+           max-height: 70vh;
+           opacity: 100%;
+           width: 100%;
+       }
+
+       #img2 {
+           max-height: 70vh;
+           opacity: 0%;
+           width: 100%;
+       }
+
+       #img3 {
+           max-height: 70vh;
+           opacity: 0%;
+           width: 100%;
+       }
