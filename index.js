@@ -19,23 +19,23 @@ app.use('/quienes', (req, res) =>{
 });
 
 app.use('/serie', (req, res)=>{
-    res.sendFile(path.join(__dirname, '/public/serie.html'));
+    res.sendFile(path.join(__dirname, './public/serie.html'));
 });
 
 app.use('/posters', (req, res) =>{
-    res.sendFile(path.join(__dirname, '/public/posters.html'));
+    res.sendFile(path.join(__dirname, './public/posters.html'));
 });
 
 app.use('/mangas', (req, res) =>{
-    res.sendFile(path.join(__dirname, '/public/mangas.html'));
+    res.sendFile(path.join(__dirname, './public/mangas.html'));
 });
 
 app.use('/figuras', (req, res) =>{
-res.sendFile(path.join(__dirname, '/public/figuras.html'));
+res.sendFile(path.join(__dirname, './public/figuras.html'));
 });
 
 app.use('/contacto', (req, res) =>{
-    res.sendFile(path.join(__dirname, '/public/contacto.html'));
+    res.sendFile(path.join(__dirname, './public/contacto.html'));
 })
 
 app.listen(app.get('port'), ()=>{
